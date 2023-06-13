@@ -13,7 +13,7 @@ class MemoryVerseApp extends StatelessWidget {
     return MaterialApp(
       title: 'Memory Verse',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
       home: const MemoryVersesPage(title: 'Memory Verse'),

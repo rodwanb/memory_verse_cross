@@ -32,15 +32,34 @@ class _MemorizeVersePageState extends State<MemorizeVersePage> {
         title: const Text('Memorize Verse'),
       ),
       body: ListView(
-        padding: const EdgeInsets.all(8.0),
         children: [
-          Wrap(
-            spacing: 0.0,
-            runSpacing: 4.0,
-            children: [
-              for (var word in words)
-                MemorizeWord(word: word, toggleHidden: _toggleHidden),
-            ],
+          LinearProgressIndicator(
+            // minHeight: 6,
+            value: progress,
+            backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+            valueColor: AlwaysStoppedAnimation<Color>(
+                Theme.of(context).colorScheme.primary),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              widget.verse.reference,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Wrap(
+              spacing: 2.0,
+              runSpacing: 6.0,
+              children: [
+                for (var word in words)
+                  MemorizeWord(word: word, toggleHidden: _toggleHidden),
+              ],
+            ),
           ),
         ],
       ),

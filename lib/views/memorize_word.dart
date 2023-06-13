@@ -28,6 +28,7 @@ class MemorizeWord extends StatelessWidget {
             child: Text(
               word.text,
               style: TextStyle(
+                fontSize: 16,
                 color: word.hidden
                     ? Colors.transparent
                     : Theme.of(context).colorScheme.primary,
@@ -39,7 +40,10 @@ class MemorizeWord extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border.all(color: Colors.transparent),
         ),
-        child: Text(word.text),
+        child: Text(
+          word.text,
+          style: const TextStyle(fontSize: 16),
+        ),
       );
     }
   }
